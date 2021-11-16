@@ -1,0 +1,22 @@
+﻿<Window x:Class="VolatilityGUI.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolatilityGUI"
+        mc:Ignorable="d"
+        Title="About" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="0,0,-0.4,-30">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="V1.0" Margin="703,350,37.6,46" />
+        <Label Content="Contact Info : 2190231@my.ipleiria.pt" Margin="36,288,330.6,105.4" />
+        <Label Content="Developed in the second year of the masters of CyberSecurity and Forensic Analysis." Margin="36,40,66.6,313.4" />
+        <Label Content="This software tries to provide a better way to learn memory analysis." Margin="36,61,66.6,313.4" />
+        <Label Content="Developed by Alexandre Monteiro" Margin="36,350,514.6,46.4" />
+    </Grid>
+</Window>

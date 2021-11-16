@@ -1,0 +1,82 @@
+﻿<Window x:Class="VolatilityGUI.EasyProject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolatilityGUI"
+        mc:Ignorable="d"
+        Title="EasyProject" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Margin="0,10,-0.4,487.4" VerticalContentAlignment="Center">Image:</Label>
+        <TextBox Name="txtSelectedEasy" Margin="0,31,189.6,512.4" HorizontalAlignment="Right" Width="543" />
+        <Button Click="btnOpenRAM2_Click" ToolTip="Select a RAM Image" Content="Select" Margin="623,31,28.6,512.4"/>
+        <Label Visibility="Visible"  Background="Black" Margin="0,88,-0.4,470.4" BorderThickness="6" BorderBrush="Black" />
+
+        <CheckBox Name="ImageInfo" IsChecked="True" ToolTip="Basic info about the Image" IsEnabled="False" Margin="28,126,585.6,278">Image Info</CheckBox>
+        <CheckBox Name="Processes" IsThreeState="False" ToolTip="List all the processes in the Image" Margin="28,148,585.6,256">Processes</CheckBox>
+        <CheckBox Name="ProcessesScan" IsThreeState="False" ToolTip="List all the processes in the Image including hidden ones" Margin="28,164,558.6,240">Processes w/ Hidden Processes</CheckBox>
+        <CheckBox Name="ProcesseHandles" IsThreeState="False" ToolTip="Lists all Open handles in all the processes" Margin="28,180,585.6,224">Processes Handles</CheckBox>
+        <CheckBox Name="ProcesseDLL" IsThreeState="False" ToolTip="Lists all DLLs from all processes" Margin="28,196,585.6,208">DLL List</CheckBox>
+        <CheckBox Name="ProcesseSID" IsThreeState="False" ToolTip="Lists Security Identifiers associated with all processes" Margin="28,212,586.6,192">Security Identifiers</CheckBox>
+        <CheckBox Name="ProcesseCMD" IsThreeState="False" ToolTip="Lists commands typed into cmd.exe" Margin="28,228,586.6,176">CMD.EXE Commands</CheckBox>
+        <CheckBox Name="ProcessePrivileges" IsThreeState="False" ToolTip="Lists all processes privileges" Margin="28,244,586.6,160">Process Privileges</CheckBox>
+        <CheckBox Name="ProcesseEnvPrivileges" IsThreeState="False" ToolTip="Lists all process's environment variables" Margin="28,260,586.6,144">Process Enviorment Privileges</CheckBox>
+        <CheckBox Name="ProcesseVerify" IsThreeState="False" ToolTip="Lists the version information embedded in PE files" Margin="28,278,586.6,126">Process Info Verification</CheckBox>
+        <CheckBox Name="MemMap" IsThreeState="False" ToolTip="Lists all pages in the memory resident" Margin="28,310,585.6,94">Memory Pagination</CheckBox>
+        <CheckBox Name="InternetExplorer" IsThreeState="False" ToolTip="Lists all fragments of IE history" Margin="28,326,585.6,78">Internet Explorer History</CheckBox>
+        <CheckBox Name="KernelDrivers" IsThreeState="False" ToolTip="Lists all the kernel drivers loaded on the system" Margin="28,361,587.6,43">Kernel Drivers</CheckBox>
+        <CheckBox Name="KernelSSDT" IsThreeState="False" ToolTip="Lists all the functions in the Native and GUI SSDTs" Margin="28,378,558.6,26">System Service Descriptor Table</CheckBox>
+        <CheckBox Name="Drivers" IsThreeState="False" ToolTip="Lists all DRIVER OBJECTs in the physical memory" Margin="28,394,575.6,10">Drivers</CheckBox>
+        <CheckBox Name="FileScan" IsThreeState="False" ToolTip="Lists all FILE OBJECTs in the physical memory" Margin="28,410,575.6,-6">File Scan</CheckBox>
+        <CheckBox Name="MutantScan" IsThreeState="False" ToolTip="Lists all KMUTANT objects" Margin="28,426,575.6,-22">Mutant Scan</CheckBox>
+        <CheckBox Name="SymbolicLinks" IsThreeState="False" ToolTip="Lists all symbolic link objects and their information" Margin="28,442,575.6,-38">Symbolic Links</CheckBox>
+        <CheckBox Name="ETHREADobjects" IsThreeState="False" ToolTip="Lists all ETHREAD objects in physical memory" Margin="28,461,575.6,-57">ETHREAD Objects</CheckBox>
+        <CheckBox Name="UnloadedModules" IsThreeState="False" ToolTip="Lists all unloaded drivers" Margin="28,477,575.6,-73">Unloaded Modules</CheckBox>
+        <CheckBox Name="Networking" IsThreeState="False" ToolTip="Lists all network artifacts" Margin="255,131,347.6,273">Networking/Connections</CheckBox>
+        <CheckBox Name="RegistryHives" IsThreeState="False" ToolTip="Lists all physical addresses of CMHIVEs (registry hives) in memory" Margin="255,165,317.6,239">Virtual Addresses of Registry Hives</CheckBox>
+        <CheckBox Name="RegistryKeys" IsThreeState="False" ToolTip="Lists all virtual addresses of registry hives in memory and their full paths" Margin="255,181,335.6,223">Registry Keys</CheckBox>
+        <CheckBox Name="RegistryDomain" IsThreeState="False" ToolTip="Lists cached domain credentials stored in the registry" Margin="255,199,335.6,205">Accounts/Domain Credentials</CheckBox>
+        <CheckBox Name="RegistryLSA" IsThreeState="False" ToolTip="Lists LSA secrets from the registry" Margin="255,215,335.6,189">Local Security Authority</CheckBox>
+        <CheckBox Name="RegistryUserAssist" IsThreeState="False" ToolTip="Lists UserAssist keys" Margin="255,231,335.6,173">UserAssist Keys</CheckBox>
+        <CheckBox Name="RegistryShell" IsThreeState="False" ToolTip="Lists Shellbag information obtained from the registry" Margin="255,247,335.6,157">Shellbags</CheckBox>
+        <CheckBox Name="RegistryShim" IsThreeState="False" ToolTip="Lists Application Compatibility Shim Cache registry key" Margin="255,263,300.6,141">Application Compatibility Shim Cache</CheckBox>
+        <CheckBox Name="RegistrySID" IsThreeState="False" ToolTip="Lists SIDs for services on the machine" Margin="255,279,317.6,125">Service SIDs</CheckBox>
+        <CheckBox Name="FileMFT" IsThreeState="False" ToolTip="Lists Master File Table (MFT) entries in memory" Margin="255,315,317.6,89">Master File Table</CheckBox>
+        <CheckBox Name="BIOS" IsThreeState="False" ToolTip="Lists keystrokes from the BIOS area of memory" Margin="255,347,317.6,57">BIOS keystrokes</CheckBox>
+        <CheckBox Name="Timeliner" IsThreeState="False" ToolTip="Lists a timeline from various artifacts in memory" Margin="255,363,317.6,41">Artifacts Timeliner</CheckBox>
+        <CheckBox Name="CrashInfo" IsThreeState="False" ToolTip="Lists info about Crashes, Hibernation, etc." Margin="255,394,263.6,10">Crash Dumps, Hibernation, and Conversion</CheckBox>
+        <CheckBox Name="Sessions" IsThreeState="False" ToolTip="Lists _MM_SESSION_SPACE objects and details related to the processes running" Margin="255,426,344.6,-22">Sessions Objects</CheckBox>
+        <CheckBox Name="WNDObjects" IsThreeState="False" ToolTip="Lists tagWINDOWSTATION objects and details on the window station" Margin="255,442,344.6,-38">Window Stations Objects</CheckBox>
+        <CheckBox Name="DeskScan" IsThreeState="False" ToolTip="Prints the entire list of desktops" Margin="255,457,344.6,-53">Desktop Scan</CheckBox>
+        <CheckBox Name="Atom" IsThreeState="False" ToolTip="Lists atom tables" Margin="255,473,344.6,-69">Atom Tables</CheckBox>
+        <CheckBox Name="Clipboard" IsThreeState="False" ToolTip="Lists data from users' clipboards" Margin="552,132,47.6,272">Users Clipboard</CheckBox>
+        <CheckBox Name="EventHooks" IsThreeState="False" ToolTip="Lists event hooks installed via the SetWinEventHook API" Margin="552,148,47.6,256">Event Hooks</CheckBox>
+        <CheckBox Name="gahti" IsThreeState="False" ToolTip="Lists win32kgahti symbols which is an array of tagHANDLETYPEINFO structures" Margin="552,163,47.6,241">USER Object Types</CheckBox>
+        <CheckBox Name="MessageHooks" IsThreeState="False" ToolTip="Lists both local and global message hooks, installed via SetWindowsHookEx APIs" Margin="552,179,47.6,225">Message Hooks</CheckBox>
+        <CheckBox Name="UserHandles" IsThreeState="False" ToolTip="Lists session-specific tagSHAREDINFO structures" Margin="552,196,47.6,208">User Handles</CheckBox>
+        <CheckBox Name="gditimers" IsThreeState="False" ToolTip="Lists USER handle table API and for each TYPE_TIMER" Margin="552,212,47.6,192">User Handle Table API Timers</CheckBox>
+        <CheckBox Name="DesktopWindows" IsThreeState="False" ToolTip="Lists all windows (visible or not) in all desktops of the system" Margin="552,228,47.6,176">Desktop Windows</CheckBox>
+        <CheckBox Name="malfind" IsThreeState="False" ToolTip="Lists hidden or injected code/DLLs in user mode memory" Margin="552,260,47.6,144">Malware Find</CheckBox>
+        <CheckBox Name="services" IsThreeState="False" ToolTip="Lists services that are registered on your memory image" Margin="552,276,47.6,128">Services</CheckBox>
+        <CheckBox Name="ldrmodules" IsThreeState="False" ToolTip="Lists hidden dlls and cross-reference this information with the 3 PEB lists" Margin="552,292,47.6,112">LDR Modules</CheckBox>
+        <CheckBox Name="apihooks" IsThreeState="False" ToolTip="Lists IAT, EAT, Inline style hooks, and several special types of hooks" Margin="552,308,47.6,96">API Hooks</CheckBox>
+        <CheckBox Name="idt" IsThreeState="False" ToolTip="Lists system's IDT (Interrupt Descriptor Table)" Margin="552,324,47.6,80">Interrupt Descriptor Table</CheckBox>
+        <CheckBox Name="gdt" IsThreeState="False" ToolTip="Lists system's GDT (Global Descriptor Table)" Margin="552,340,47.6,64">Global Descriptor Table</CheckBox>
+        <CheckBox Name="threads" IsThreeState="False" ToolTip="Lists extensive details on threads, including the contents of each thread's registers, a disassembly of code at the thread's start address, and various other fields that may be relevant" Margin="552,356,47.6,48">Threads</CheckBox>
+        <CheckBox Name="Callbacks" IsThreeState="False" ToolTip="Lists an assortment of important notification routines and kernel callbacks. Rootkits, anti-virus suites, dynamic analysis tools, and many components of the Windows kernel" Margin="552,372,47.6,32">Callbacks</CheckBox>
+        <CheckBox Name="driverirp" IsThreeState="False" ToolTip="Lists driver's IRP (Major Function) table" Margin="552,388,47.6,16">Drivers IRP</CheckBox>
+        <CheckBox Name="timers" IsThreeState="False" ToolTip="Lists installed kernel timers (KTIMER) and any associated DPCs (Deferred Procedure Calls)" Margin="552,404,47.6,130.4">Kernel Timers</CheckBox>
+
+        <Button Name="SelectAll" Click="SelectAll_Click" Content="Select/Deselect All" Margin="481,469,202.6,63.4" />
+
+        <Button Name="BuildReport" Click="BuildReport_Click" Content="Build Report" Margin="626,463,28.6,57.4" />
+        <CheckBox Name="Conclusion" IsChecked="True" IsThreeState="False" ToolTip="Lists revelant information about the most suspicious processes" Margin="626,445,28.6,96.4">Conclusion</CheckBox>
+
+        <!--Loading Stuff-->
+        <Label Visibility="Hidden" Name="lbl_Progress" Background="White" Margin="129,227,115.6,203.4" BorderThickness="2" BorderBrush="Black"/>
+        <Button Visibility="Hidden" ToolTip="Cancel the current process" Name="ProgressCancel"  Content="Cancel" Margin="530,310,143.6,225.4" />
+        <ProgressBar Visibility="Hidden" Minimum="0" Maximum="100" Name="pbStatus" IsIndeterminate="True" Margin="155,244,143.6,283.4" />
+        <Label Visibility="Hidden" Name="lbl_NumberProgress" Content="11 out of 24 Processes Running" Margin="155,308,388.6,214.4" FontSize="16"/>
+        <!--End of Loading Stuff-->
+    </Grid>
+</Window>

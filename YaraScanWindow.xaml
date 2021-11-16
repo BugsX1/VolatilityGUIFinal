@@ -1,0 +1,20 @@
+﻿<Window x:Class="VolatilityGUI.YaraScanWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolatilityGUI"
+        mc:Ignorable="d"
+        Title="YaraScan" Height="600" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Yara Rule" FontWeight="Bold" Margin="18,69,702.6,467.4"/>
+        <TextBox Name="lbl_About" ToolTip="Inpur your Yara rules" BorderThickness="3" BorderBrush="Black" Margin="96,10,9.6,395.4" TextChanged="lbl_About_TextChanged" />
+        <Button Name="btnRun" ToolTip="Run your rules" Click="btnRun_Click" Content="Run" Margin="676,180,9.6,351.4" FontWeight="Bold" FontSize="20"/>
+        <Label Content="Output" FontWeight="Bold" Margin="18,396,702.6,140.4"/>
+        <TextBox Name="lbl_output" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" IsReadOnly="True" BorderThickness="3" BorderBrush="Black" Margin="96,224,9.6,10.4"/>
+        <ComboBox Name="ComboBoxY" ToolTip="Choose a PID or run your rules on the entire system" IsEnabled="True" IsReadOnly="True"  Margin="506,185,0,0" Width="153" RenderTransformOrigin="0.507,0.526" VerticalAlignment="Top" HorizontalAlignment="Left" Height="29"  BorderThickness="3" BorderBrush="Black" Background="#FF716969">
+            <ComboBoxItem>Entire System</ComboBoxItem>
+        </ComboBox>
+        <ProgressBar  Minimum="0" Maximum="100" Name="pbStatus" IsIndeterminate="True" Margin="100,185,304.6,356.4" RenderTransformOrigin="0.5,0.5" />
+    </Grid>
+</Window>

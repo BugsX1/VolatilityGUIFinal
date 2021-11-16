@@ -1,0 +1,166 @@
+﻿<Window x:Class="VolatilityGUI.CentralWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolatilityGUI"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="VolatilityGUI" MinHeight="{x:Static SystemParameters.PrimaryScreenHeight}" MinWidth="{x:Static SystemParameters.PrimaryScreenWidth}" WindowState="Maximized" ResizeMode="CanMinimize" Width="1360" Height="879.2">
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" Grid.Column="0" Grid.Row="0" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="1" Grid.Row="0" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="2" Grid.Row="0" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="3" Grid.Row="0" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="0" Grid.Row="1" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="1" Grid.Row="1" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="2" Grid.Row="1" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="3" Grid.Row="1" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="0" Grid.Row="2" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="1" Grid.Row="2" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="2" Grid.Row="2" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="3" Grid.Row="2" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="0" Grid.Row="3" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="1" Grid.Row="3" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="2" Grid.Row="3" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="3" Grid.Row="3" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="0" Grid.Row="4" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="1" Grid.Row="4" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="2" Grid.Row="4" BorderBrush="Gray"/>
+        <Border BorderThickness="1" Grid.Column="3" Grid.Row="4" BorderBrush="Gray"/>
+
+        <DockPanel VerticalAlignment="Top" Grid.ColumnSpan="7" Margin="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Name="NewRamH" Header="_New RAM Image" Click="NewRAM_Click" ToolTip="Open a RAM Image"/>
+                    <MenuItem Header="_About RAM Image" Click="AboutRAM_Click" Name="AboutRAMTab" ToolTip="See basic info about the RAM Image and change the profile"/>
+                    <MenuItem Name="SaveH" Header="_Save" Click="Save_Click" ToolTip="Save the project"/>
+                    <MenuItem Name="SaveAsH" Header="_Save As" Click="SaveAs_Click" ToolTip="Save the project in a new file"/>
+                    <MenuItem Name="HistoryH" Header="_History" Click="History_Click" ToolTip="See the history of the current session"/>
+                    <MenuItem Name="VirusH" Header="_VirusTotal" Click="VirusTotal_Click" ToolTip="Open the VirusTotal API Window"/>
+                    <MenuItem Name="YaraScanH" Header="_YaraScan" Click="YaraScanH_Click" ToolTip="Open the YaraScan Window"/>
+                    <MenuItem Name="ForensicH" Header="_Forensic Investigation" Click="ForensicH_Click" ToolTip="Open the Forensic Investigation Window"/>
+                </MenuItem>
+                <MenuItem Header="_Extract ALL">
+                    <MenuItem Header="_DLL" Click="ExtractAllDLL_Click" ToolTip="Extract all DLLs related to this Image"/>
+                    <MenuItem Header="_Memory Pages" Click="ExtractAllMem_Click" ToolTip="Extract all Memory Pages related to this Image"/>
+                    <MenuItem Header="_EXEs" Click="ExtractAllExes_Click" ToolTip="Extract all EXEs related to this Image"/>
+                    <MenuItem Header="_VAD Pages" Click="ExtractAllVad_Click" ToolTip="Extract all VAD Nodes related to this Image"/>
+                    <MenuItem Header="_Event Logs" Click="ExtractAllEvt_Click" ToolTip="Extract all the Events related to this Image"/>
+                    <MenuItem Header="_Drivers" Click="ExtractAllDrivers_Click" ToolTip="Extract all the Drivers related to this Image"/>
+                    <MenuItem Header="_Registry" Click="ExtractAllRegistry_Click" ToolTip="Extract all the Registry related to this Image"/>
+                </MenuItem>
+                <MenuItem Header="_Extract Selected">
+                    <MenuItem Header="_DLL" Click="ExtractSomeDLL_Click" ToolTip="Open a new Window to extract some DLLs related to this Image"/>
+                    <MenuItem Header="_Memory Pages" Click="ExtractSomeMem_Click" ToolTip="Open a new Window to extract some memory Pages related to this Image"/>
+                    <MenuItem Header="_EXEs" Click="ExtractSomeExes_Click" ToolTip="Open a new Window to extract some EXEs related to this Image"/>
+                    <MenuItem Header="_VAD Pages" Click="ExtractSomeVad_Click" ToolTip="Open a new Window to extract some Vodes Nodes related to this Image"/>
+                </MenuItem>
+                <MenuItem Header="_About" Click="About_Click" ToolTip="See info about the software"/>
+            </Menu>
+        </DockPanel>
+        <Label Content="Commands Category" Grid.Row="0" Grid.Column="0" Margin="0,18,0,0" VerticalContentAlignment="Center"/>
+        <ComboBox Name="ComboBox" IsEnabled="True" IsReadOnly="True" ToolTip="Select from a list of themes related to Volatility" SelectionChanged="ComboBox_SelectionChanged" BorderThickness="2" BorderBrush="Black" Grid.Column="0" Grid.Row="0" Margin="123,18,0,1" VerticalContentAlignment="Center">
+            <ComboBoxItem>Processes and DLLs</ComboBoxItem>
+            <ComboBoxItem>Process Memory</ComboBoxItem>
+            <ComboBoxItem>Kernel Memory and Objects</ComboBoxItem>
+            <ComboBoxItem>Networking</ComboBoxItem>
+            <ComboBoxItem>Registry</ComboBoxItem>
+            <ComboBoxItem>Crash Dumps, Hibernation, and Conversion</ComboBoxItem>
+            <ComboBoxItem>File System/Miscellaneous</ComboBoxItem>
+            <ComboBoxItem>GUI</ComboBoxItem>
+            <ComboBoxItem>MAL</ComboBoxItem>
+            <ComboBoxItem>Advance Commands</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Command" Grid.Row="0" Margin="0,18,0,0" Grid.Column="1" VerticalContentAlignment="Center"/>
+        <ComboBox Name="ComboBoxDependent" KeyDown="OnKeyDownCommand" ToolTip="Select a command based on the theme" SelectionChanged="ComboBoxDependent_SelectionChanged" IsReadOnly="True" IsEnabled="False" BorderThickness="2" BorderBrush="gray" Grid.Row="0" Margin="76.4,18,0,1" Grid.Column="1" VerticalContentAlignment="Center"/>
+        <Button Name="RunCommand" ToolTip="Run the selected command" Click="btnSelectCBCommand_Click" Content="Run Command" Grid.Column="2" Grid.Row="0" Margin="0.2,18,0.2,0.2"/>
+
+        <Label Content="About Command" Grid.Row="0" Grid.Column="3" Margin="0,12,0,0" />
+        <TextBox Name="lbl_About" ToolTip="Info about the selected command" TextWrapping="Wrap" BorderThickness="3" BorderBrush="Gray" IsReadOnly="True" Grid.Column="3" Grid.Row="0" Margin="0,32,0,0" Grid.RowSpan="4"/>
+        <Button Name="EasyReport" ToolTip="Open the Easy Report Window" Click="EasyReport_Click" Content="Easy Report" Grid.Row="4" Grid.Column="3" FontSize="22" FontWeight="Bold"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Background="Gray"/>
+        <Label Grid.Row="1" Grid.Column="1" Background="Gray"/>
+        <Label Grid.Row="2" Grid.Column="0" Background="Gray"/>
+        <Label Grid.Row="2" Grid.Column="1" Background="Gray"/>
+        <Label Grid.Row="3" Grid.Column="0" Background="Gray"/>
+        <Label Grid.Row="3" Grid.Column="1" Background="Gray"/>
+        <Label Grid.Row="3" Grid.Column="2" Background="Gray"/>
+        <Label Grid.Row="2" Grid.Column="2" Background="Gray"/>
+        <Label Grid.Row="1" Grid.Column="2" Background="Gray"/>
+        <Label Name="lbl_PID" Visibility="Hidden" Background="LightGray" Content="PID" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="0,0,0,0" Grid.Row="1" Grid.Column="1" />
+        <Label Name="lbl_Type" Visibility="Hidden" Background="LightGray" Content="Type" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="0,0,0,0" Grid.Row="1" Grid.Column="1"/>
+        <Label Name="lbl_Offset" Visibility="Hidden" Background="LightGray" Content="Offset" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="0,0,0,0" Grid.Row="1" Grid.Column="1"/>
+        <Label Name="lbl_CBOffset" Visibility="Hidden" Background="LightGray" Content="Hive Offset" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="0,0,0,0" Grid.Row="1" Grid.Column="1"/>
+
+        <ComboBox Name="ComboBoxPID" KeyDown="OnKeyDownAdvance" ToolTip="Select a PID that will effect the chosen command" Visibility="Hidden" IsEnabled="False" IsEditable="False" BorderThickness="2" BorderBrush="Gray"  Margin="76.4,0,0,0" Grid.Column="1" Grid.Row="1"/>
+        <ComboBox Name="ComboBoxType" KeyDown="OnKeyDownAdvance" ToolTip="Select a Type that will effect the chosen command" Visibility="Hidden" IsEnabled="False" IsEditable="False" BorderThickness="2" BorderBrush="Gray"  Margin="76.4,0,0,0" Grid.Column="1" Grid.Row="1"/>
+        <TextBox Name="TextBoxOffset" KeyDown="OnKeyDownAdvance" ToolTip="Input a Offset that will effect the chosen command" Visibility="Hidden" IsEnabled="False" BorderThickness="2" BorderBrush="Gray"  Margin="76.4,0,0,0" Grid.Column="1" Grid.Row="1"/>
+        <ComboBox Name="ComboBoxOffset" KeyDown="OnKeyDownAdvance" ToolTip="Select a Offset that will effect the chosen command" Visibility="Hidden" IsEnabled="False" IsEditable="False" BorderThickness="2" BorderBrush="Gray"  Margin="76.4,0,0,0" Grid.Column="1" Grid.Row="1"/>
+
+        <Label Name="advanceCommandLabel" Background="LightGray" Content="Manual Command" Visibility="Hidden" Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Center"/>
+        <TextBox Name="advanceCommandInput" KeyDown="OnKeyDownHandlerManual" ToolTip="Input your manual command" Visibility="Hidden" VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="Gray" Grid.Row="2" Grid.ColumnSpan="2" Margin="123,0,0,0"/>
+        <Button Name="advanceCommandButton" ToolTip="Run your manual command" Click="advanceCommandButton_Click" Visibility="Hidden" Content="Run Manual Command" Grid.Row="2" Grid.Column="2"/>
+
+        <Image Name="sandImg" Source="toppng.com-vector-free-download-clock-svg-sand-sand-watch-icon-620x980.png" Visibility="Hidden" Grid.Row="3" Grid.Column="2" ToolTip="This command will take sometime to process." Margin="148.4,0,0,0"/>
+        <Label Name="CancelLabel" Content="Volatility is Running" Visibility="Hidden" Background="WhiteSmoke" FontWeight="DemiBold" BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Center" Margin="0,0,315,0"/>
+        <ProgressBar Visibility="Hidden"  Minimum="0" Maximum="100" Name="pbStatus" IsIndeterminate="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="123,0,92.4,0" />
+        <Button Name="cancelBtn" ToolTip="Cancel the current command" Click="ProgressCancel_Click"  Visibility="Hidden" Content="Cancel" FontSize="20" FontWeight="DemiBold" Grid.Column="2" Grid.Row="3" Margin="125,0,0,0"/>
+
+        <Label Content="Keyword/Regex" Grid.Row="4" Grid.Column="0" VerticalContentAlignment="Center" />
+        <TextBox Name="txtFind" KeyDown="OnKeyDownFind" ToolTip="Input your keyword or regex rule($regex:)" BorderThickness="2" BorderBrush="Gray" Grid.Row="4" Grid.Column="0" Margin="102,0,0,0"/>
+        <Button Name="FindCommand" ToolTip="Run the Find fuction" Click="btnFind_Click" BorderThickness="2" Content="Find" Grid.Row="4" HorizontalAlignment="Left" MaxWidth="151" Grid.Column="1" Width="165"/>
+        <Label Content="Find Result" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center" Margin="169.8,0,0,0"/>
+        <TextBox Name="lbl_Status" IsReadOnly="True" ToolTip="Info about the Find fuction will appear here" TextWrapping="Wrap" BorderThickness="2" BorderBrush="Gray" Grid.Row="4" Grid.ColumnSpan="2" Margin="239.8,0,0,0" Grid.Column="1"/>
+
+        <Label Name="keyLabel2" Visibility="Hidden" Content="Please input a private Key that will function as a password" FontSize="12" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0,0,0,0"/>
+        <TextBox Name="keybox" KeyDown="OnKeyDownSave" ToolTip="Input a cypher key" Visibility="Hidden" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="1" Margin="0,0,0,0"/>
+        <Button Name="keyBtn" ToolTip="Save the file" Click="SaveKey_Click" Visibility="Hidden" Content="Enter" FontSize="24" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="2" Grid.Column="2" Margin="0,0,41.8,0" BorderBrush="Black" BorderThickness="1"/>
+        <Button Name="keyBtn2" ToolTip="Save the file" Click="SaveKeyAs_Click" Visibility="Hidden" Content="Enter" FontSize="24" FontWeight="Bold" Grid.Row="2" Grid.Column="2" Margin="0,0,41.8,0" BorderBrush="Black" BorderThickness="1"/>
+        <Button Name="keyCloseBtn" Click="CloseKey_Click" ToolTip="Cancel Save" Visibility="Hidden" Content="X" FontSize="24" VerticalContentAlignment="Center" FontWeight="Bold" Background="Red" Grid.Row="2" Grid.Column="2" Margin="176.6,0,0,0" BorderBrush="Black" BorderThickness="1"/>
+
+        <TabControl Name="tabDynamic" ToolTip="Tabs will appear here" ItemsSource="{Binding}" SelectionChanged="tabDynamic_SelectionChanged" Margin="0,0,-0.4,0.4" Grid.Row="5" Grid.RowSpan="6" Grid.ColumnSpan="4" >
+            <TabControl.Resources>
+                <DataTemplate x:Key="TabHeader" DataType="TabItem">
+                    <DockPanel>
+                        <Button Name="btnDelete" DockPanel.Dock="Right" Margin="5,0,0,0" Padding="0" Click="btnDelete_Click" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Name}">
+                            <Image Source="20-209142_small-close-button-svg-png-icon-free-download.png" Height="11" Width="11"></Image>
+                        </Button>
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Header}" />
+                    </DockPanel>
+                </DataTemplate>
+                <Style TargetType="RichTextBox">
+                    <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                    <Setter Property="AcceptsReturn" Value="True"></Setter>
+                    <!-- <Setter Property="TextWrapping" Value="WrapWithOverflow"></Setter> >-->
+                    <!-- <Setter Property="MaxLines" Value="5000"></Setter> -->
+                    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"></Setter>
+                    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"></Setter>
+                </Style>
+            </TabControl.Resources>
+        </TabControl>
+
+    </Grid>
+</Window>

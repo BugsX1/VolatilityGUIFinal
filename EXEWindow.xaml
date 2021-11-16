@@ -1,0 +1,15 @@
+﻿<Window x:Class="VolatilityGUI.EXEWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolatilityGUI"
+        mc:Ignorable="d"
+        Title="EXE Download" Height="250" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Label Name="KeyInfo" Content="PID" Margin="34,41,369.6,147"/>
+        <ProgressBar  Minimum="0" Maximum="100" Name="pbStatus" IsIndeterminate="True" Margin="34,129,50.6,45" RenderTransformOrigin="0.5,0.5" />
+        <ComboBox Name="ComboBoxPIDEXE" SelectionChanged="ComboBoxPIDEXE_SelectionChanged" IsEditable="False" ToolTip="Show all the available PIDs" Margin="34,59,0,0" Width="331" RenderTransformOrigin="0.507,0.526" VerticalAlignment="Top" HorizontalAlignment="Left" Height="47"  BorderThickness="2" BorderBrush="Black" Background="#FF716969" />
+        <Button Name="RunSelectEXE" ToolTip="Download Selected EXE" Click="RunSelectEXE_Click" Content="Extract Selected EXE" Margin="395,59,50.6,114"  />
+    </Grid>
+</Window>

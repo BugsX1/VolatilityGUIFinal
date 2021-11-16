@@ -1,0 +1,70 @@
+﻿<Window x:Class="VolatilityGUI.VirusTotalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolatilityGUI"
+        mc:Ignorable="d"
+        Title="VirusTotal API" Height="650" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid Name="dgDLL" Margin="0,35,-0.4,100" AutoGenerateColumns="False" CanUserAddRows="false" CanUserSortColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="File/Name" Binding="{Binding Name}" Width="0.10*" IsReadOnly="True"/>
+
+                <DataGridHyperlinkColumn Header="Website/Path" Binding="{Binding Path}" Width="0.30*" IsReadOnly="True">
+                    <DataGridHyperlinkColumn.ElementStyle>
+                        <Style>
+                            <EventSetter Event="Hyperlink.Click" Handler="DG_Hyperlink_Click"/>
+                        </Style>
+                    </DataGridHyperlinkColumn.ElementStyle>
+                </DataGridHyperlinkColumn>
+
+                <DataGridTemplateColumn Header="Run API" Width="0.04*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="RunAPI">Run</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--
+                <DataGridCheckBoxColumn Header="Select" IsThreeState="False"  Binding="{Binding IsChecked}" Width="0.04*"/>
+                -->
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Name="ComboBoxP" ToolTip="Select a option to fill the list" SelectionChanged="ComboBoxP_SelectionChanged" IsEditable="False" Margin="10,7,0,0" Width="203" RenderTransformOrigin="0.507,0.526" VerticalAlignment="Top" HorizontalAlignment="Left" Height="28"  BorderThickness="2" BorderBrush="Black" Background="#FF716969">
+            <ComboBoxItem>EXEs</ComboBoxItem>
+            <ComboBoxItem>DLLs</ComboBoxItem>
+        </ComboBox>
+        <Button Name="FindFile" ToolTip="Fill the list" Click="FindFile_Click" Content="Fill List" Margin="466,7,143.6,585"  />
+        <!--<Button Name="RunSelected" Visibility="Hidden" Click="RunSelected_Click" Content="Analyse Selected Files" Margin="624,563,39.6,28"  />-->
+        <ComboBox Name="ComboBoxY" ToolTip="Choose a PID or fill the list with all the dlls" SelectedIndex="0" Visibility="Hidden" IsEnabled="True" IsReadOnly="True"  Margin="265,6,0,0" Width="153" RenderTransformOrigin="0.507,0.526" VerticalAlignment="Top" HorizontalAlignment="Left" Height="29"  BorderThickness="3" BorderBrush="Black" Background="#FF716969">
+            <ComboBoxItem>Entire System</ComboBoxItem>
+        </ComboBox>
+
+        <Button Name="Right" Click="Right_Click" Content=">" Margin="442,525,308.6,64" FontSize="18" Visibility="Visible" />
+        <Label Name="Pages" Content="1 of 10" Margin="361,525,356.6,64" Visibility="Visible" HorizontalContentAlignment="Center" Width="76" />
+        <Button Name="Left" Content="&lt;" Click="Left_Click" Margin="313,525,437.6,64" FontSize="18" Visibility="Visible"/>
+
+        <Label Name="KeyInfo" Content="Something Something dark side" Margin="10,529,522.6,57" />
+        <Label Content="VirusTotal API Key" Margin="0,563,656.6,10" HorizontalContentAlignment="Right" />
+        <TextBox Name="lbl_Status" ToolTip="Input your VirusTotal Key" BorderThickness="3" BorderBrush="Black" Margin="142,563,174.6,28"/>
+        <CheckBox Name="PrivateCheck" ToolTip="If your have a Private VirusTotal Key check this box" IsThreeState="False" Content="Private API Key" Margin="10,592,656.6,0"/>
+        
+        <TextBlock Margin="142,597,-0.4,0">           
+        <Hyperlink NavigateUri="http://www.virustotal.com">
+        To check your API usage go to the VirusTotal website
+        </Hyperlink>
+        </TextBlock>
+
+        <ProgressBar Visibility="Hidden" Minimum="0" Maximum="100" Name="pbStatus" IsIndeterminate="True" Margin="626,564,8.6,30" RenderTransformOrigin="0.5,0.5" >
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+    </Grid>
+</Window>

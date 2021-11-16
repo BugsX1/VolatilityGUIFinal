@@ -1,0 +1,13 @@
+﻿<Window x:Class="VolatilityGUI.ForensicWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolatilityGUI"
+        mc:Ignorable="d"
+        Title="ForensicWindow" Height="450" Width="800">
+    <Grid>
+        <RichTextBox Name="InvBox" ScrollViewer.VerticalScrollBarVisibility="Visible" IsReadOnly="True" Margin="0,0,0,0"/>
+        <ProgressBar Visibility="Visible"  Minimum="0" Maximum="100" Name="pbStatus" IsIndeterminate="True" Margin="0,391,0,0" />        
+    </Grid>
+</Window>

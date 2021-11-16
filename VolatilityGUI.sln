@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolatilityGUI", "VolatilityGUI.csproj", "{060B9E5B-596B-4E96-9FED-62C3A1D64B03}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VolatilityGUISetup", "..\VolatilityGUISetup\VolatilityGUISetup.vdproj", "{C214EA25-592E-4A08-825F-99C8E76DC07D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{060B9E5B-596B-4E96-9FED-62C3A1D64B03}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{060B9E5B-596B-4E96-9FED-62C3A1D64B03}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{060B9E5B-596B-4E96-9FED-62C3A1D64B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060B9E5B-596B-4E96-9FED-62C3A1D64B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C214EA25-592E-4A08-825F-99C8E76DC07D}.Debug|Any CPU.ActiveCfg = Release
+		{C214EA25-592E-4A08-825F-99C8E76DC07D}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D37211A-EA06-4093-B98A-8FEC0846A8B4}
+	EndGlobalSection
+EndGlobal

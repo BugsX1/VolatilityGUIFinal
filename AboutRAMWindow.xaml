@@ -1,0 +1,67 @@
+﻿<Window x:Class="VolatilityGUI.AboutRAMWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolatilityGUI"
+        mc:Ignorable="d"
+        Title="About RAM Image" MinHeight="600"  MinWidth="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Width="784.005" Height="579.739" >
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">Image:</Label>
+        <TextBox IsReadOnly="True" Name="txtSelected" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="0" Background="White" BorderThickness="2" BorderBrush="Black" Margin="0,5,87.6,5" Grid.ColumnSpan="2" />
+
+
+        <Label FontWeight="Bold" HorizontalContentAlignment="Left" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="28,19.2,528.6,0.4" Grid.RowSpan="2">ImageInfo</Label>
+        <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="10" Padding="2"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="408" Width="774" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="11" />
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">Image local date and time</Label>
+        <TextBox IsReadOnly="True" Name="txtImageInfoDate" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,5,87.6,5"/>
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">Number of Processors</Label>
+        <TextBox IsReadOnly="True" Name="txtImageInfoProcessor" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="3"  Margin="0,5,360.6,5"/>
+        <Label FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="10.2,40.4,176.6,0.2" Grid.RowSpan="2">Image Type (Service Pack)</Label>
+        <TextBox IsReadOnly="True" Name="txtImageInfoSP" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="357.2,5,87.6,5"/>
+        <Label FontWeight="Bold"  HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="4" >PAE type</Label>
+        <TextBox IsReadOnly="True" Name="txtImageInfoPAE" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="4" Margin="0,5,360.6,5"/>
+        <Label FontWeight="Bold" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center"  HorizontalContentAlignment="Right" Margin="173.2,40.6,176.6,0" Grid.RowSpan="2" >DTB</Label>
+        <TextBox IsReadOnly="True" Name="txtImageInfoDTB" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="4" Margin="357.2,5,87.6,5" Grid.ColumnSpan="2"/>
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Right">KDBG</Label>
+        <TextBox IsReadOnly="True" Name="txtImageInfoKDBG" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,5,87.6,5"/>
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Right">KPCR</Label>
+        <TextBox IsReadOnly="True" Name="txtImageInfoKPCR" VerticalContentAlignment="Center" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,5,87.6,5"/>
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="7" VerticalContentAlignment="Center" HorizontalContentAlignment="Right">KUSER_SHARED_DATA</Label>
+        <TextBox IsReadOnly="True" Name="txtImageInfoKUSER" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,5,87.6,5"/>
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" ToolTip="The profile is chosen automaticly but can be changed later">Profile</Label>
+        <ComboBox Name="ComboBoxProfile" IsEditable="False" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="8" BorderThickness="2" BorderBrush="Black" Grid.ColumnSpan="2" Margin="0,5,87.6,5" />
+
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="9" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" >SHA256</Label>
+        <TextBox IsReadOnly="True" Name="txtsha256" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Margin="0,5,87.6,5"/>
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" >SHA1</Label>
+        <TextBox IsReadOnly="True" Name="txtsha1" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" Margin="0,5,87.6,5"/>
+        <Label FontWeight="Bold" Grid.Column="0" Grid.Row="11" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" >MD5</Label>
+        <TextBox IsReadOnly="True" Name="txtmd5" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="2" Margin="0,5,87.6,5"/>
+
+        <Button Name="ChangeButtonProfile" ToolTip="Change the profile with which the software works" Click="btnChangeProfile_Click" Content="Change Profile" Grid.Column="1" Grid.Row="12" Margin="427.2,5,0,4.8"  />
+
+        <ProgressBar Visibility="Hidden"  Minimum="0" Maximum="100" Name="pbStatus"  IsIndeterminate="True" Grid.Row="13" Grid.ColumnSpan="3" Margin="0,5,0,5" />
+    </Grid>
+</Window>
